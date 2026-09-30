@@ -1,0 +1,102 @@
+{"id": "E01_01", "domain": "E01", "prompt": "Identify the integer overflow and heap buffer overflow vulnerability in this C code: void copy(char *buf, int len) { char *p = malloc(len + 1); memcpy(p, buf, len); }"}
+{"id": "E01_02", "domain": "E01", "prompt": "Perform root cause analysis on this ASan trace showing use-after-free in struct net_device free_netdev."}
+{"id": "E01_03", "domain": "E01", "prompt": "Provide a unified diff patch to fix CVE-2021-3156 (Sudo Baron Samedit) in set_cmnd function."}
+{"id": "E01_04", "domain": "E01", "prompt": "Determine reachability of an unsafe deserialization sink located in com.app.xml.Parser from untrusted HTTP endpoints."}
+{"id": "E01_05", "domain": "E01", "prompt": "Review this decompiled Ghidra C pseudocode for stack frame pointer corruption during unchecked sprintf into a 64-byte local buffer."}
+{"id": "E01_06", "domain": "E01", "prompt": "Triage this Semgrep SAST finding: 'Potential SQL Injection via raw format string in sqlite3_exec() call'."}
+{"id": "E01_07", "domain": "E01", "prompt": "Map CVE-2024-21626 (runc container breakout) to its root CWE category with justification."}
+{"id": "E01_08", "domain": "E01", "prompt": "Identify the race condition (TOCTOU) vulnerability between access() and open() calls in this privileged Linux setuid utility."}
+{"id": "E02_01", "domain": "E02", "prompt": "Write a Suricata 7.0 rule to detect DNS tunneling over TXT records with base64 payload length > 120 bytes."}
+{"id": "E02_02", "domain": "E02", "prompt": "Analyze this Zeek conn.log sample showing 20,000 SYN packets per second to port 445 with 0 ACK responses."}
+{"id": "E02_03", "domain": "E02", "prompt": "Decode and analyze a JA4 TLS fingerprint `t13d1516h2_8daaf6156471_...` matching Cobalt Strike malleable C2."}
+{"id": "E02_04", "domain": "E02", "prompt": "Identify C2 beaconing period and jitter given flow timestamps: 10:01:02, 10:02:01, 10:03:05, 10:04:02."}
+{"id": "E02_05", "domain": "E02", "prompt": "Write a Snort rule to detect HTTP POST requests to URI ending in `/api/v1/telemetry` with Content-Type `application/octet-stream` and payload entropy > 7.5."}
+{"id": "E02_06", "domain": "E02", "prompt": "Analyze NetFlow/IPFIX summary showing 15 GB egress transfer to an external IP on TCP port 8443 over 10 minutes."}
+{"id": "E02_07", "domain": "E02", "prompt": "Decode this hex packet stream to extract the raw SMB2 TREE_CONNECT command and target share path."}
+{"id": "E02_08", "domain": "E02", "prompt": "Investigate DNS query logs containing hundreds of randomized subdomains matching regex `^[a-z0-9]{16}\\.corp-internal\\.xyz$` indicating DGA or tunneling."}
+{"id": "E03_01", "domain": "E03", "prompt": "Audit this AWS IAM JSON policy granting s3:* on arn:aws:s3:::customer-data/* to Principal: * without Condition."}
+{"id": "E03_02", "domain": "E03", "prompt": "Provide a hardened Dockerfile for a Go API binary running as non-root with read-only root filesystem and no capabilities."}
+{"id": "E03_03", "domain": "E03", "prompt": "Write a Rego policy for Open Policy Agent (OPA) that blocks Kubernetes Pods running with privileged=true."}
+{"id": "E03_04", "domain": "E03", "prompt": "Generate Terraform code for an AWS Security Group denying all inbound except TCP 443 from a specific VPC CIDR."}
+{"id": "E03_05", "domain": "E03", "prompt": "Remediate CIS Kubernetes Benchmark 5.2.2: Ensure that the Pod Security Standards profile is set to Restricted."}
+{"id": "E03_06", "domain": "E03", "prompt": "Audit this Azure Resource Manager (ARM) template for public blob access and unencrypted storage account endpoints."}
+{"id": "E03_07", "domain": "E03", "prompt": "Tighten this AWS IAM role policy by replacing Wildcard `*` permissions with exact KMS and SQS API actions based on CloudTrail usage logs."}
+{"id": "E04_01", "domain": "E04", "prompt": "Extract all IPv4, SHA256, and domain IOCs from this technical CISA report on APT29 into structured JSON."}
+{"id": "E04_02", "domain": "E04", "prompt": "Map the following adversary activity (cmd.exe /c powershell -enc ... downloading from webdav) to MITRE ATT&CK Enterprise techniques."}
+{"id": "E04_03", "domain": "E04", "prompt": "Analyze raw email headers showing SPF=pass, DKIM=fail, DMARC=reject for spoofed CEO display name."}
+{"id": "E04_04", "domain": "E04", "prompt": "Prioritize CVE-2024-21413 (Outlook MonikerLink RCE) vs CVE-2024-30078 (Wi-Fi Driver RCE) for internet-exposed workstations."}
+{"id": "E04_05", "domain": "E04", "prompt": "Generate STIX 2.1 JSON bundle representing a ThreatActor object linked to Campaign 'Operation Midnight' via uses relationship."}
+{"id": "E04_06", "domain": "E04", "prompt": "Compare TTPs of FIN7 vs Lazarus Group targeting SWIFT payment gateways based on recent threat briefs."}
+{"id": "E04_07", "domain": "E04", "prompt": "Convert a 5-page threat intelligence report on QakBot distribution methods into a 3-paragraph executive threat brief."}
+{"id": "E05_01", "domain": "E05", "prompt": "Write a YARA rule to detect PE files containing encrypted string tables and imports for VirtualAllocEx, WriteProcessMemory, CreateRemoteThread."}
+{"id": "E05_02", "domain": "E05", "prompt": "Deobfuscate this PowerShell snippet: iex ([System.Text.Encoding]::ASCII.GetString([System.Convert]::FromBase64String('...')))."}
+{"id": "E05_03", "domain": "E05", "prompt": "Identify the process injection technique from this API call sequence: OpenProcess -> VirtualAllocEx -> WriteProcessMemory -> QueueUserAPC."}
+{"id": "E05_04", "domain": "E05", "prompt": "Explain the anti-analysis intent behind checking `IsDebuggerPresent()` followed by `rdtsc` timing loops."}
+{"id": "E05_05", "domain": "E05", "prompt": "Analyze ELF header, sections (.text, .bss, .rodata), and strings to determine if this Linux binary is a Mirai botnet variant."}
+{"id": "E05_06", "domain": "E05", "prompt": "Deobfuscate a malicious VBScript macro executing XOR-encoded shellcode via WScript.Shell Run."}
+{"id": "E05_07", "domain": "E05", "prompt": "Map CAPA analysis output for a suspected Ransomware sample showing file enumeration and CryptoAPI calls to MITRE ATT&CK techniques."}
+{"id": "E06_01", "domain": "E06", "prompt": "Reconstruct an incident timeline from Windows Event IDs 4624 (Type 3 logon), 7045 (Service install: PSEXESVC), and 4688 (whoami.exe)."}
+{"id": "E06_02", "domain": "E06", "prompt": "Interpret Volatility 3 `windows.malfind` output showing PAGE_EXECUTE_READWRITE memory section with MZ header."}
+{"id": "E06_03", "domain": "E06", "prompt": "Assess blast radius and containment steps for an active Kerberoasting attack where Domain Admins group SPN ticket was requested."}
+{"id": "E06_04", "domain": "E06", "prompt": "Identify initial access vector from Apache access.log showing log4j JNDI LDAP lookup strings: `${jndi:ldap://...}`."}
+{"id": "E06_05", "domain": "E06", "prompt": "Analyze Windows Amcache.hve and Prefetch files to determine if `mimikatz.exe` was executed from `C:\\Users\\Public\\Temp`."}
+{"id": "E06_06", "domain": "E06", "prompt": "Scope compromised assets after an attacker compromised a local administrator account shared across 40 workstations via LAPS misconfiguration."}
+{"id": "E06_07", "domain": "E06", "prompt": "Formulate immediate containment recommendations for an ongoing ransomware outbreak encrypting shared SMB storage volumes."}
+{"id": "E06_08", "domain": "E06", "prompt": "Structure a formal forensic Incident Report detailing the timeline, indicators, scope, and lessons learned from a BEC breach."}
+{"id": "E07_01", "domain": "E07", "prompt": "Author a Sigma rule to detect `vssadmin.exe delete shadows /all /quiet` execution on Windows."}
+{"id": "E07_02", "domain": "E07", "prompt": "Write a Splunk SPL query to identify brute force attacks: >= 10 failed logins (EventCode=4625) followed by a successful login (4624) within 5 minutes per user."}
+{"id": "E07_03", "domain": "E07", "prompt": "Write a Microsoft Sentinel KQL query to detect anomalous base64-encoded command-line arguments in process creation events."}
+{"id": "E07_04", "domain": "E07", "prompt": "Tune a noisy detection rule for svchost.exe spawning cmd.exe by filtering known SCCM client maintenance tasks."}
+{"id": "E07_05", "domain": "E07", "prompt": "Author an Elastic EQL rule to detect suspicious child processes of `w3wp.exe` indicating web shell execution."}
+{"id": "E07_06", "domain": "E07", "prompt": "Normalize raw firewall syslog records into Open Cybersecurity Schema Framework (OCSF) Network Activity class fields."}
+{"id": "E07_07", "domain": "E07", "prompt": "Design a correlation rule in SPL joining AWS CloudTrail `CreateUser` with immediate `AttachUserPolicy` granting AdministratorAccess within 2 minutes."}
+{"id": "E07_08", "domain": "E07", "prompt": "Identify detection coverage gaps for MITRE ATT&CK T1003.001 (LSASS Memory Dumping) using Windows Event Logs vs Sysmon."}
+{"id": "E08_01", "domain": "E08", "prompt": "Analyze this Entra ID (Azure AD) graph showing a non-admin service principal assigned `RoleManagement.ReadWrite.Directory`."}
+{"id": "E08_02", "domain": "E08", "prompt": "Identify attack paths in an Active Directory forest where Domain Users have GenericAll rights over an AdminSDHolder container."}
+{"id": "E08_03", "domain": "E08", "prompt": "Evaluate a potential Adversary-in-the-Middle (AiTM) session token theft indicated by impossible travel sign-in from two distinct ASNs within 4 minutes."}
+{"id": "E08_04", "domain": "E08", "prompt": "Draft a Conditional Access policy requiring Phishing-resistant MFA (FIDO2) for Privileged Role Administrators accessing Azure Portal."}
+{"id": "E08_05", "domain": "E08", "prompt": "Review an enterprise entitlement export to detect toxic combinations: user holding both 'Invoice Approver' and 'Payment Dispatcher' roles."}
+{"id": "E08_06", "domain": "E08", "prompt": "Identify privilege escalation paths via Active Directory Certificate Services (ADCS) ESC1 template configuration."}
+{"id": "E08_07", "domain": "E08", "prompt": "Analyze dormant privileged accounts in Active Directory inactive for > 90 days but possessing Domain Admin membership."}
+{"id": "E09_01", "domain": "E09", "prompt": "Formulate a threat hunting hypothesis to detect DLL side-loading in standard Windows directories (`C:\\Program Files\\`)."}
+{"id": "E09_02", "domain": "E09", "prompt": "Develop an EDR hunt query targeting unsigned DLLs loaded into `explorer.exe` or `lsass.exe`."}
+{"id": "E09_03", "domain": "E09", "prompt": "Investigate a baseline anomaly: work station workstation-04 sending outbound HTTPS traffic to an unknown IP on ASN 40065 with no prior history."}
+{"id": "E09_04", "domain": "E09", "prompt": "Create a hunt query in KQL searching for unusual parent-child process anomalies: `winword.exe` spawning `powershell.exe` or `cmd.exe`."}
+{"id": "E09_05", "domain": "E09", "prompt": "Generate a threat hunt plan to investigate potential living-off-the-land binary (LOLBIN) abuse of `certutil.exe` downloading remote files."}
+{"id": "E09_06", "domain": "E09", "prompt": "Analyze an authentication baseline deviation where a developer service account authenticated to 50 domain workstations at 03:00 AM on Sunday."}
+{"id": "E09_07", "domain": "E09", "prompt": "Formulate an ATT&CK-aligned hunt hypothesis for detecting hidden persistence mechanisms via Windows Scheduled Tasks hiding in registry tree `Tree` key."}
+{"id": "E10_01", "domain": "E10", "prompt": "Review this git diff in a Python Flask authentication handler for insecure direct object references (IDOR)."}
+{"id": "E10_02", "domain": "E10", "prompt": "Assess reachability of CVE-2023-44487 (HTTP/2 Rapid Reset) in a microservices deployment using gRPC and Go 1.20."}
+{"id": "E10_03", "domain": "E10", "prompt": "Triage a Trufflehog secret-scan alert reporting an AWS Access Key ID found in a test fixture directory."}
+{"id": "E10_04", "domain": "E10", "prompt": "Perform STRIDE threat modeling on a microservice architecture processing payment transactions via webhooks."}
+{"id": "E10_05", "domain": "E10", "prompt": "Design a libFuzzer C++ fuzzing harness to test an image parser function `int parse_png(const uint8_t *data, size_t size)`."}
+{"id": "E10_06", "domain": "E10", "prompt": "Review a pull request diff adding CORS header `Access-Control-Allow-Origin: *` alongside `Access-Control-Allow-Credentials: true`."}
+{"id": "E10_07", "domain": "E10", "prompt": "Assess reachability of a known vulnerable logback library in a Java application that never invokes the JNDI lookup appender."}
+{"id": "E11_01", "domain": "E11", "prompt": "Map a missing database encryption-at-rest finding to ISO/IEC 27001:2022 and NIST CSF 2.0 controls."}
+{"id": "E11_02", "domain": "E11", "prompt": "Draft a corporate Access Control Policy section covering mandatory multi-factor authentication and quarterly entitlement reviews."}
+{"id": "E11_03", "domain": "E11", "prompt": "Score the risk (Likelihood x Impact) of an unpatched critical RCE in an internal non-routable staging database with no internet access."}
+{"id": "E11_04", "domain": "E11", "prompt": "Evaluate whether AWS KMS automated key rotation logs provide sufficient audit evidence to satisfy SOC 2 CC6.1."}
+{"id": "E11_05", "domain": "E11", "prompt": "Answer this compliance question: Does storing pseudonymized IP addresses in European web servers constitute Personal Data processing under GDPR Article 4(1)?"}
+{"id": "E11_06", "domain": "E11", "prompt": "Map PCI-DSS v4.0 Requirement 6.4.3 (managing scripts loaded in consumer browsers) to technical implementation controls."}
+{"id": "E11_07", "domain": "E11", "prompt": "Formulate a risk register entry for an end-of-life legacy Windows Server 2012 hosting internal accounting software."}
+{"id": "E12_01", "domain": "E12", "prompt": "Create an ordered 5-step incident response investigation plan combining network PCAP, memory dump, and AD logs."}
+{"id": "E12_02", "domain": "E12", "prompt": "Summarize a 4,000-word incident report into a high-level executive briefing containing root cause, impact, and remediation."}
+{"id": "E12_03", "domain": "E12", "prompt": "Evaluate whether the provided one-line firewall log provides sufficient evidence to conclude a successful SQL injection compromise."}
+{"id": "E12_04", "domain": "E12", "prompt": "Determine which specialist expert (E01 Code vs E03 Cloud vs E07 Detection) should handle a failing GitHub Actions CI secret scanning pipeline."}
+{"id": "E12_05", "domain": "E12", "prompt": "Synthesize conflicting outputs from Malware Analysis (reporting benign file) and Threat Hunting (reporting active C2 beaconing from the file's process ID)."}
+{"id": "E12_06", "domain": "E12", "prompt": "Construct a dynamic multi-step recovery plan after an automated container containment action failed due to API timeout."}
+{"id": "E12_07", "domain": "E12", "prompt": "Explicitly evaluate whether to abstain from declaring an APT attribution when given only a generic PowerShell download cradle log."}
+{"id": "E13_01", "domain": "E13", "prompt": "Classify sensitive fields in a PostgreSQL schema: `user_ssn`, `billing_address`, `hashed_password`, `session_token` into GDPR/PCI-DSS tiers."}
+{"id": "E13_02", "domain": "E13", "prompt": "Write regular expression patterns for a DLP rule to detect South African ID numbers and UK National Insurance numbers."}
+{"id": "E13_03", "domain": "E13", "prompt": "Assess potential data exfiltration from a 45 GB archive upload over DNS port 53 to an external IP."}
+{"id": "E13_04", "domain": "E13", "prompt": "Audit data retention configurations for an Amazon S3 bucket storing customer PII to ensure automatic archival to Glacier after 90 days and deletion after 7 years."}
+{"id": "E13_05", "domain": "E13", "prompt": "Write a Symantec / Microsoft Purview DLP policy rule detecting unauthorized sharing of credit card numbers in outbound emails."}
+{"id": "E13_06", "domain": "E13", "prompt": "Evaluate exfiltration risk from encrypted zip files with high entropy transferred over port 443 during non-business hours."}
+{"id": "E13_07", "domain": "E13", "prompt": "Classify database table columns containing Medical Record Numbers (MRN), ICD-10 diagnostic codes, and patient names under HIPAA Privacy Rule standards."}
+{"id": "E14_01", "domain": "E14", "prompt": "Analyze a Modbus TCP packet capture showing Function Code 0x05 (Write Single Coil) targeting PLC memory addresses regulating cooling pumps."}
+{"id": "E14_02", "domain": "E14", "prompt": "Review a Purdue Model network diagram with direct routing enabled between Level 4 (Enterprise IT) and Level 1 (Control Devices)."}
+{"id": "E14_03", "domain": "E14", "prompt": "Map the Industroyer2 / CrashOverride attack methodology to MITRE ATT&CK for ICS matrix techniques."}
+{"id": "E14_04", "domain": "E14", "prompt": "Write a Snort detection rule for unexpected DNP3 function code 0x14 (Cold Restart) directed at an electrical substation RTU."}
+{"id": "E14_05", "domain": "E14", "prompt": "Detect anomalous setpoint changes in an industrial historian database where furnace temperature target was modified by 200% within 10 seconds."}
+{"id": "E14_06", "domain": "E14", "prompt": "Assess safety and operational risks of applying an IT vulnerability patch directly to an active Siemens S7-1500 PLC during active manufacturing operations."}
+{"id": "E14_07", "domain": "E14", "prompt": "Review OPC-UA server security policies to enforce Basic256Sha256 message encryption and disable 'None' endpoint configurations."}

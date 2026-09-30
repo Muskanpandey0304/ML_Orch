@@ -1,0 +1,100 @@
+{"id": "LL_BPF_01", "domain": "E02", "prompt": "Write a complete eBPF XDP program in C using libbpf that inspects incoming IPv4 packets and drops any UDP traffic targeted at port 53 if the DNS query payload exceeds 512 bytes."}
+{"id": "LL_BPF_02", "domain": "E02", "prompt": "Write an eBPF Traffic Control (TC) classifier in C (direct-action mode) attached to the egress hook to rewrite the source IP of all outgoing TCP packets."}
+{"id": "LL_BPF_03", "domain": "E02", "prompt": "Implement an eBPF XDP filter in C using `BPF_MAP_TYPE_HASH` to implement a per-source-IP token bucket rate limiter for incoming ICMP Echo Requests."}
+{"id": "LL_BPF_04", "domain": "E02", "prompt": "Write a C eBPF tracepoint program attached to `syscalls/sys_enter_connect` that captures the destination IPv4 address and port, storing them in a `BPF_MAP_TYPE_RINGBUF`."}
+{"id": "LL_BPF_05", "domain": "E02", "prompt": "Write an XDP program in C that parses IPv6 headers, skips Hop-by-Hop options, and drops any TCP packet with both the SYN and FIN flags set simultaneously."}
+{"id": "LL_BPF_06", "domain": "E02", "prompt": "Demonstrate how to fix a BPF verifier error 'math between pkt pointer and register with unbounded min value' during variable-length IP header option parsing in C."}
+{"id": "LL_BPF_07", "domain": "E02", "prompt": "Write an eBPF program in C that uses `bpf_ktime_get_ns()` and an LRU map to measure TCP handshake RTT by timing the gap between SYN and ACK packets."}
+{"id": "LL_BPF_08", "domain": "E02", "prompt": "Write an eBPF LSM (Linux Security Module) probe in C attached to `security_socket_connect` to block outgoing connections to port 4444 from unprivileged users."}
+{"id": "LL_BPF_09", "domain": "E02", "prompt": "Write an XDP kernel program in C that strips VLAN tags (802.1Q) from incoming frames using `bpf_xdp_adjust_head` before passing them to the network stack."}
+{"id": "LL_BPF_10", "domain": "E02", "prompt": "Implement an eBPF socket filter (SO_ATTACH_BPF) in C that inspects raw socket traffic and filters out HTTP GET requests containing the header 'User-Agent: BadBot'."}
+{"id": "LL_BPF_11", "domain": "E02", "prompt": "Write a C eBPF program utilizing `bpf_redirect()` to forward incoming packets from interface `eth0` directly to `eth1` based on a destination MAC lookup table."}
+{"id": "LL_BPF_12", "domain": "E02", "prompt": "Explain and write a C BPF program that uses `BPF_MAP_TYPE_PERF_EVENT_ARRAY` to stream dropped packet headers to a userspace monitoring daemon."}
+{"id": "LL_BPF_13", "domain": "E02", "prompt": "Write an eBPF kprobe in C attached to `tcp_v4_rcv` that increments a per-CPU counter for total TCP segments received without holding kernel locks."}
+{"id": "LL_BPF_14", "domain": "E02", "prompt": "Write an XDP C program to defend against UDP amplification attacks by dropping packets with source port 123 (NTP) whose payload length is greater than 400 bytes."}
+{"id": "LL_BPF_15", "domain": "E02", "prompt": "Write a BPF sockops program in C attached to `BPF_PROG_TYPE_SOCK_OPS` that dynamically tunes `TCP_NODELAY` and `TCP_MAXSEG` on active sockets."}
+{"id": "LL_BPF_16", "domain": "E02", "prompt": "Write a C function using libbpf userspace API (`bpf_object__open`, `bpf_program__attach_xdp`) to load and attach an XDP object file to interface 'eth0'."}
+{"id": "LL_BPF_17", "domain": "E02", "prompt": "Implement an XDP-based generic software load balancer in C that hashes IPv4 tuples and rewrites the destination IP to one of two backend IPs using a BPF array map."}
+{"id": "LL_BPF_18", "domain": "E02", "prompt": "Write an eBPF program in C using `bpf_skb_load_bytes()` to inspect deep packet payload bytes in a TC filter and drop non-TLS traffic on port 443."}
+{"id": "LL_BPF_19", "domain": "E02", "prompt": "Write an eBPF kretprobe in C on `sys_enter_execve` to log process executions including binary path and parent PID to a ring buffer."}
+{"id": "LL_BPF_20", "domain": "E02", "prompt": "Write an XDP program in C that performs IP fragment inspection and immediately drops any overlapping fragments (fragment offset non-zero with MF=1)."}
+{"id": "LL_KER_01", "domain": "E02", "prompt": "Write a standalone Linux Kernel Module (LKM) in C that registers a Netfilter hook on `NF_INET_PRE_ROUTING` to drop all TCP packets destined for port 23 (Telnet)."}
+{"id": "LL_KER_02", "domain": "E01", "prompt": "Write a Linux kernel module in C that safely allocates and initializes a custom linked list using `<linux/list.h>` with `rcu_read_lock()` for synchronization."}
+{"id": "LL_KER_03", "domain": "E02", "prompt": "Implement a Netfilter hook in a C kernel module on `NF_INET_LOCAL_OUT` that computes the incremental IP checksum update using `csum_replace2()` after modifying the IP TTL."}
+{"id": "LL_KER_04", "domain": "E01", "prompt": "Write a character device driver in C implementing `.read` and `.write` file operations using `copy_to_user()` and `copy_from_user()` with proper boundary validation."}
+{"id": "LL_KER_05", "domain": "E01", "prompt": "Explain and write a C kernel function that demonstrates the correct usage of spinlocks vs mutexes inside interrupt handlers (top half vs bottom half)."}
+{"id": "LL_KER_06", "domain": "E02", "prompt": "Write a Netfilter kernel module in C that intercepts all outgoing UDP packets and logs their source port, destination port, and length via `pr_info()`."}
+{"id": "LL_KER_07", "domain": "E01", "prompt": "Write a C kernel module that creates a `/proc/sys/net/custom_firewall` entry using `proc_create()` to allow userspace to toggle packet filtering on and off."}
+{"id": "LL_KER_08", "domain": "E01", "prompt": "Write a Linux kernel module in C that registers a `kprobe` on `do_sys_openat2` to monitor sensitive file access to `/etc/shadow`."}
+{"id": "LL_KER_09", "domain": "E02", "prompt": "Write a Netfilter hook in C that inspects the `sk_buff` linear and non-linear buffers using `skb_header_pointer()` to safely read TCP payload without data corruption."}
+{"id": "LL_KER_10", "domain": "E01", "prompt": "Write a C function to properly allocate and free memory using a dedicated SLAB cache created via `kmem_cache_create()` and `kmem_cache_alloc()` in kernel space."}
+{"id": "LL_KER_11", "domain": "E01", "prompt": "Implement a kernel workqueue handler in C using `INIT_WORK()` and `schedule_work()` to defer heavy packet processing from a hardware interrupt context."}
+{"id": "LL_KER_12", "domain": "E02", "prompt": "Write a Netfilter hook function in C on `NF_INET_FORWARD` that implements stateful packet dropping by checking `nf_ct_get()` connection tracking states."}
+{"id": "LL_KER_13", "domain": "E01", "prompt": "Write a minimal kernel module in C that uses `register_netdevice_notifier()` to detect when a network interface goes UP or DOWN and prints its MAC address."}
+{"id": "LL_KER_14", "domain": "E01", "prompt": "Demonstrate the use of `ioremap()` and `iounmap()` in a C kernel driver to safely access memory-mapped I/O (MMIO) hardware registers."}
+{"id": "LL_KER_15", "domain": "E01", "prompt": "Write a Linux kernel module in C that uses `tasklist_lock` or RCU macros `for_each_process()` to iterate through all active tasks and print process names and PIDs."}
+{"id": "LL_KER_16", "domain": "E02", "prompt": "Implement a custom Netfilter target in C that mangle-rewrites the IP header Type of Service (ToS) / DSCP field for all VoIP RTP traffic."}
+{"id": "LL_KER_17", "domain": "E01", "prompt": "Write a C function demonstrating memory barrier usage (`smp_mb()`, `smp_rmb()`, `smp_wmb()`) to prevent instruction reordering in lockless shared memory rings."}
+{"id": "LL_KER_18", "domain": "E01", "prompt": "Implement a kernel module in C that utilizes high-resolution timers via `hrtimer_init()` and `hrtimer_start()` to trigger a security audit callback every 100 microseconds."}
+{"id": "LL_KER_19", "domain": "E02", "prompt": "Write a C function for a Netfilter hook that checks `skb->protocol` and safely drops fragmented IPv4 packets where the fragment offset is non-zero."}
+{"id": "LL_KER_20", "domain": "E01", "prompt": "Write a kernel module in C that cleanly registers and unregisters an `nf_hook_ops` struct for IPv4 and IPv6 families across kernel versions 5.x and 6.x."}
+{"id": "LL_NET_01", "domain": "E02", "prompt": "Write a complete C program using raw sockets (`AF_INET, SOCK_RAW, IPPROTO_RAW`) to craft and transmit a custom IPv4 packet with a specified TTL and payload."}
+{"id": "LL_NET_02", "domain": "E02", "prompt": "Implement the standard Internet Checksum algorithm (RFC 1071) in optimized C for validating IP and TCP pseudo-headers."}
+{"id": "LL_NET_03", "domain": "E02", "prompt": "Write a C program using `AF_PACKET, SOCK_RAW` and `libpcap` structures to capture Ethernet frames in promiscuous mode and print source/destination MAC addresses."}
+{"id": "LL_NET_04", "domain": "E02", "prompt": "Write a C program that crafts and sends an ARP Reply packet over raw sockets to refresh an interface's local ARP table cache."}
+{"id": "LL_NET_05", "domain": "E02", "prompt": "Write a C program that creates a raw socket with `IP_HDRINCL` socket options, constructs a full TCP SYN packet, and calculates the TCP pseudo-header checksum."}
+{"id": "LL_NET_06", "domain": "E02", "prompt": "Write a high-performance network packet sniffer in C using memory-mapped ring buffers (`PACKET_MMAP` / `PACKET_RX_RING`) on Linux."}
+{"id": "LL_NET_07", "domain": "E02", "prompt": "Implement an ICMP Echo Request (Ping) generator in C using raw sockets (`IPPROTO_ICMP`) that measures round-trip time with `clock_gettime(CLOCK_MONOTONIC)`."}
+{"id": "LL_NET_08", "domain": "E02", "prompt": "Write a C network utility using raw sockets that decodes the IPv4 header `ihl` field to accurately locate variable-length TCP header start offsets."}
+{"id": "LL_NET_09", "domain": "E02", "prompt": "Write a C program that sends a UDP broadcast packet to `255.255.255.255` using standard POSIX socket API with `SO_BROADCAST` enabled."}
+{"id": "LL_NET_10", "domain": "E02", "prompt": "Write a C function to parse raw DNS wire-format responses, handling DNS label pointer compression (`0xc000` bitmask) safely without infinite recursion."}
+{"id": "LL_NET_11", "domain": "E02", "prompt": "Write a multi-threaded TCP SYN port scanner in C using non-blocking raw sockets and `epoll()` to monitor socket connect readiness."}
+{"id": "LL_NET_12", "domain": "E02", "prompt": "Write a C program using raw sockets to detect TCP sequence number prediction vulnerabilities by analyzing successive ISN deltas."}
+{"id": "LL_NET_13", "domain": "E02", "prompt": "Implement a C program using `SOCK_DGRAM` with `IP_PKTINFO` socket options to extract the destination IP and incoming network interface index for UDP packets."}
+{"id": "LL_NET_14", "domain": "E02", "prompt": "Write a C packet parser that inspects a raw pcap buffer and extracts TLS Client Hello SNI (Server Name Indication) extensions."}
+{"id": "LL_NET_15", "domain": "E02", "prompt": "Write a C program that binds a raw socket to a specific network interface using `setsockopt(..., SO_BINDTODEVICE, ...)`."}
+{"id": "LL_NET_16", "domain": "E02", "prompt": "Implement a C function that validates whether an incoming packet's IP header checksum is valid and discards corrupt packets."}
+{"id": "LL_NET_17", "domain": "E02", "prompt": "Write a C network program that crafts an IGMP Membership Report packet using raw sockets on `IPPROTO_IGMP`."}
+{"id": "LL_NET_18", "domain": "E02", "prompt": "Write a C program that parses raw Ethernet frames, identifies IEEE 802.1Q double-tagged VLAN headers (QinQ), and extracts inner/outer VLAN IDs."}
+{"id": "LL_NET_19", "domain": "E02", "prompt": "Write a C program that crafts an IPv6 raw packet with a custom Hop-by-Hop extension header using `IPPROTO_RAW` and `AF_INET6` sockets."}
+{"id": "LL_NET_20", "domain": "E02", "prompt": "Implement a user-space NAT (Network Address Translation) engine in C that modifies IP/TCP headers and recalculates checksums in real time."}
+{"id": "LL_SEC_01", "domain": "E01", "prompt": "Analyze this vulnerable C snippet: `char *p = malloc(16); free(p); char *q = malloc(16); strcpy(p, 'AAAA');` Explain the heap UAF mechanics and fix it."}
+{"id": "LL_SEC_02", "domain": "E01", "prompt": "Explain how GCC `-fstack-protector-all` inserts stack canaries and implement a custom compiler-independent stack canary check in pure C."}
+{"id": "LL_SEC_03", "domain": "E01", "prompt": "Review this C code for integer truncation vulnerabilities: `unsigned short len = strlen(input); char *buf = malloc(len);` and write the safe version."}
+{"id": "LL_SEC_04", "domain": "E01", "prompt": "Explain the mechanics of Return-Oriented Programming (ROP) mitigations (Intel CET / Shadow Stacks) and how modern C compilers generate `ENDBR64` instructions."}
+{"id": "LL_SEC_05", "domain": "E01", "prompt": "Write a secure C memory comparison function that executes in strict constant time to prevent side-channel timing attacks on cryptographic hashes."}
+{"id": "LL_SEC_06", "domain": "E01", "prompt": "Analyze this format string vulnerability: `printf(user_supplied_string);` Explain why `%n` writes to memory and provide the remediation."}
+{"id": "LL_SEC_07", "domain": "E01", "prompt": "Write a secure C wrapper around `realloc()` that prevents memory leaks when `realloc()` fails and returns NULL."}
+{"id": "LL_SEC_08", "domain": "E01", "prompt": "Identify the Off-by-One buffer overflow in this C loop: `for (int i = 0; i <= MAX_SIZE; i++) buffer[i] = 0;` and provide the unified diff fix."}
+{"id": "LL_SEC_09", "domain": "E01", "prompt": "Explain how Address Space Layout Randomization (ASLR) and Position Independent Executables (PIE) work at the ELF binary level in Linux."}
+{"id": "LL_SEC_10", "domain": "E01", "prompt": "Write a C function that demonstrates safe string truncation using `snprintf()` vs `strncpy()` without leaving non-null-terminated buffers."}
+{"id": "LL_SEC_11", "domain": "E01", "prompt": "Explain how glibc `ptmalloc` detects Double Free vulnerabilities using the fastbin size check and chunk header inspection."}
+{"id": "LL_SEC_12", "domain": "E01", "prompt": "Write a C memory allocator tracking wrapper that replaces `malloc()` and `free()` using weak symbols (`LD_PRELOAD`) to detect memory leaks."}
+{"id": "LL_SEC_13", "domain": "E01", "prompt": "Explain how Linux kernel Page Table Isolation (KPTI) mitigates Meltdown (speculative execution side-channel) at the MMU level."}
+{"id": "LL_SEC_14", "domain": "E01", "prompt": "Analyze this concurrency bug in C: `if (!initialized) { initialized = 1; resource = init(); }` and fix it using C11 atomic operations (`stdatomic.h`)."}
+{"id": "LL_SEC_15", "domain": "E01", "prompt": "Write a C program that safely reads a sensitive password into memory, locks it from being swapped to disk using `mlock()`, and zeroes it with `explicit_bzero()`."}
+{"id": "LL_SEC_16", "domain": "E01", "prompt": "Explain the security risks of variable-length arrays (VLAs) in C kernel space and how they lead to unbounded stack pointer increments."}
+{"id": "LL_SEC_17", "domain": "E01", "prompt": "Write a C function that performs checked 64-bit integer multiplication using `__builtin_mul_overflow` to detect arithmetic overflows."}
+{"id": "LL_SEC_18", "domain": "E01", "prompt": "Explain how Non-Executable Stack (NX / DEP) bit is configured in the ELF `PT_GNU_STACK` segment header."}
+{"id": "LL_SEC_19", "domain": "E01", "prompt": "Analyze this dangling pointer vulnerability: returning a pointer to a local stack variable from a C function, and provide the fix."}
+{"id": "LL_SEC_20", "domain": "E01", "prompt": "Write a sandboxed C execution wrapper that drops all capabilities using `libcap` and restricts system calls via Linux `seccomp-bpf` filter."}
+{"id": "LL_MAL_01", "domain": "E05", "prompt": "Write a C program that parses an x86_64 ELF binary header and prints all section headers (.text, .data, .rodata, .bss) and virtual entry addresses."}
+{"id": "LL_MAL_02", "domain": "E05", "prompt": "Analyze this x86_64 assembly sequence: `xor eax, eax; cpuid; cmp ebx, 0x756e6547` and explain its hardware identification intent."}
+{"id": "LL_MAL_03", "domain": "E05", "prompt": "Write a YARA rule to detect PE files that contain an export table named 'ReflectiveLoader' and a high section entropy (> 7.2)."}
+{"id": "LL_MAL_04", "domain": "E05", "prompt": "Write a C program that parses a Windows Portable Executable (PE) file's Optional Header and checks for `IMAGE_DLLCHARACTERISTICS_DYNAMIC_BASE` (ASLR support)."}
+{"id": "LL_MAL_05", "domain": "E05", "prompt": "Explain the anti-debugging technique of scanning the Process Environment Block (PEB) for `BeingDebugged` flag and `NtGlobalFlag` in x86/x64 malware."}
+{"id": "LL_MAL_06", "domain": "E05", "prompt": "Deconstruct this disassembly snippet: `push rbp; mov rbp, rsp; sub rsp, 0x40; call __chkstk;` and explain its stack probe allocation purpose."}
+{"id": "LL_MAL_07", "domain": "E05", "prompt": "Write a C function that walks the Linux `/proc/[pid]/maps` file to detect injected anonymous executable memory regions (`rwxp`)."}
+{"id": "LL_MAL_08", "domain": "E05", "prompt": "Explain the mechanism of API hooking via Virtual Method Table (VMT) hooking vs Import Address Table (IAT) hooking with C code examples."}
+{"id": "LL_MAL_09", "domain": "E05", "prompt": "Write a Python script using `pefile` to extract all imported DLLs and function names from a suspicious PE binary and flag `VirtualAlloc` imports."}
+{"id": "LL_MAL_10", "domain": "E05", "prompt": "Explain the intent behind a malware sample invoking `ptrace(PTRACE_TRACEME, 0, 1, 0)` on Linux and how analysts bypass it."}
+{"id": "LL_MAL_11", "domain": "E05", "prompt": "Write a C program that calculates the Shannon entropy of a binary buffer to detect encrypted or packed payloads."}
+{"id": "LL_MAL_12", "domain": "E05", "prompt": "Analyze this Ghidra decompiled loop: `while (i < len) { out[i] = in[i] ^ key[i % 4]; i++; }` and explain the 4-byte repeating XOR decryption routine."}
+{"id": "LL_MAL_13", "domain": "E05", "prompt": "Write a YARA rule targeting Linux ELF ransomware that searches for string references to `/dev/urandom`, `AES_encrypt`, and extension append strings like `.locked`."}
+{"id": "LL_MAL_14", "domain": "E05", "prompt": "Explain how dynamic linkers on Linux resolve symbols at runtime using Global Offset Table (GOT) and Procedure Linkage Table (PLT)."}
+{"id": "LL_MAL_15", "domain": "E05", "prompt": "Write a C program that detects if it is running under a hypervisor using the `CPUID` instruction (checking hypervisor bit in ECX)."}
+{"id": "LL_MAL_16", "domain": "E05", "prompt": "Analyze a Windows crash dump call stack showing `ntdll!KiUserExceptionDispatcher` followed by corrupted `EIP`/`RIP` register states."}
+{"id": "LL_MAL_17", "domain": "E05", "prompt": "Explain how Process Hollowing works: unmapping legitimate process memory via `NtUnmapViewOfSection` and remapping malicious payload sections."}
+{"id": "LL_MAL_18", "domain": "E05", "prompt": "Write a C program that inspects the memory of an active process using `/proc/[pid]/mem` and `/proc/[pid]/maps` with `ptrace`."}
+{"id": "LL_MAL_19", "domain": "E05", "prompt": "Explain how Thread Local Storage (TLS) callbacks in PE files are executed before the main binary entry point to evade debuggers."}
+{"id": "LL_MAL_20", "domain": "E05", "prompt": "Write a YARA rule to match compiled Golang binaries containing specific runtime package paths like `runtime.gopanic` and obfuscated C2 endpoints."}

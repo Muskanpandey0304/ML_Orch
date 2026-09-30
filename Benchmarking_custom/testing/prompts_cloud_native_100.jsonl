@@ -1,0 +1,100 @@
+{"id": "CLD_01", "domain": "E03", "prompt": "Write a Kubernetes Admission Controller webhook in Go that rejects any Pod requesting `hostNetwork: true` or `hostPID: true`."}
+{"id": "CLD_02", "domain": "E03", "prompt": "Audit a Kubernetes ClusterRoleBinding granting `system:anonymous` the `cluster-admin` role and explain the blast radius."}
+{"id": "CLD_03", "domain": "E03", "prompt": "Write a Kyverno policy that requires all container images to originate from a trusted internal registry (`registry.corp.internal/*`)."}
+{"id": "CLD_04", "domain": "E03", "prompt": "Explain how an attacker breaks out of a container that has `CAP_SYS_ADMIN` and an attached root cgroup mount."}
+{"id": "CLD_05", "domain": "E03", "prompt": "Write a Rego (OPA) policy to ensure all Pods define explicit memory and CPU resource limits."}
+{"id": "CLD_06", "domain": "E03", "prompt": "Demonstrate container breakout mechanics using an exposed mounted host Docker socket (`/var/run/docker.sock`)."}
+{"id": "CLD_07", "domain": "E03", "prompt": "Write a Kubernetes NetworkPolicy that restricts egress traffic from namespace `payment` to only DNS (port 53) and database namespace on port 5432."}
+{"id": "CLD_08", "domain": "E03", "prompt": "Explain how gVisor (`runsc`) and Kata Containers implement sandboxed container runtimes compared to standard `runc`."}
+{"id": "CLD_09", "domain": "E03", "prompt": "Audit a Kubernetes Pod manifest with `securityContext.capabilities.add: ['CAP_NET_RAW']` and explain the network sniffing risk."}
+{"id": "CLD_10", "domain": "E03", "prompt": "Write a Terraform configuration to provision an Amazon EKS cluster with private endpoint access, envelope encryption via KMS, and IAM OIDC provider enabled."}
+{"id": "CLD_11", "domain": "E03", "prompt": "Explain how to exploit an unauthenticated Kubernetes kubelet API on port 10250 to execute arbitrary commands inside running pods."}
+{"id": "CLD_12", "domain": "E03", "prompt": "Write a Cilium NetworkPolicy in YAML that enforces Layer 7 HTTP filtering, allowing only `GET /api/v1/health` methods."}
+{"id": "CLD_13", "domain": "E03", "prompt": "Analyze a container breakout via `CAP_SYS_PTRACE` allowing injection into host-level processes."}
+{"id": "CLD_14", "domain": "E03", "prompt": "Write a Kubernetes PodSecurityStandard policy setting the baseline profile across all production namespaces."}
+{"id": "CLD_15", "domain": "E03", "prompt": "Explain the risks of storing sensitive credentials in Kubernetes ConfigMaps vs Secrets encrypted with KMS at rest."}
+{"id": "CLD_16", "domain": "E03", "prompt": "Demonstrate how to configure a multi-stage Dockerfile that runs as an unprivileged UID 10001 with a scratch base image."}
+{"id": "CLD_17", "domain": "E03", "prompt": "Audit a Helm chart template that exposes the Kubernetes ServiceAccount token (`automountServiceAccountToken: true`) in an internet-facing frontend pod."}
+{"id": "CLD_18", "domain": "E03", "prompt": "Explain how seccomp profiles (`RuntimeDefault`) restrict syscall access inside containerized workloads."}
+{"id": "CLD_19", "domain": "E03", "prompt": "Write a Falco rule in YAML to detect a container spawning an interactive shell (`bash`/`sh`) during runtime."}
+{"id": "CLD_20", "domain": "E03", "prompt": "Analyze a Kubernetes RBAC privilege escalation path using the `bind` or `escalate` verb on Roles."}
+{"id": "CLD_21", "domain": "E03", "prompt": "Write a Terraform block to configure an AWS ECR repository with automated vulnerability scanning on push and immutable image tags."}
+{"id": "CLD_22", "domain": "E03", "prompt": "Explain how container breakouts occur via `procfs` leaks when `/proc/sys/kernel/core_pattern` is mounted with write permissions."}
+{"id": "CLD_23", "domain": "E03", "prompt": "Write a Rego policy that prevents Kubernetes Ingress resources from defining wildcard hostnames (`*`)."}
+{"id": "CLD_24", "domain": "E03", "prompt": "Explain the security boundary differences between Linux user namespaces (`userns`) and root inside a container."}
+{"id": "CLD_25", "domain": "E03", "prompt": "Write a Kubernetes manifest that enforces Ephemeral Storage limits to prevent DoS attacks filling node disk space."}
+{"id": "CLD_26", "domain": "E03", "prompt": "Audit a Kubernetes deployment that mounts `/etc/shadow` or `/root` via `hostPath` volumes."}
+{"id": "CLD_27", "domain": "E03", "prompt": "Explain how to secure inter-service communication in Istio Service Mesh using STRICT Mutual TLS (mTLS) and AuthorizationPolicies."}
+{"id": "CLD_28", "domain": "E03", "prompt": "Write a Kyverno rule that drops all default Linux capabilities and allows only `NET_BIND_SERVICE` on frontend pods."}
+{"id": "CLD_29", "domain": "E03", "prompt": "Analyze an attack path using Kubernetes CSR (CertificateSigningRequest) API abuse to generate client certificates for arbitrary nodes."}
+{"id": "CLD_30", "domain": "E03", "prompt": "Write a Dockerfile that implements rootless container execution with proper file ownership and no setuid binaries."}
+{"id": "CLD_31", "domain": "E03", "prompt": "Explain how to remediate CIS Benchmark 1.1.1 for Kubernetes API Server: Ensure `--anonymous-auth=false`."}
+{"id": "CLD_32", "domain": "E03", "prompt": "Write an OPA Gatekeeper constraint template validating that all container images include a Cosign cryptographic signature."}
+{"id": "CLD_33", "domain": "E03", "prompt": "Analyze a privilege escalation in Kubernetes through `pods/exec` permissions on a namespace containing privileged daemonsets."}
+{"id": "CLD_34", "domain": "E03", "prompt": "Write a shell script to audit etcd key-value store for unencrypted secrets and missing client certificate authentication."}
+{"id": "CLD_35", "domain": "E03", "prompt": "Explain the security considerations of using host-based CNI plugins (e.g., AWS VPC CNI) vs overlay networks (e.g., Calico/Flannel)."}
+{"id": "CLD_36", "domain": "E08", "prompt": "Audit this AWS IAM trust policy allowing `sts:AssumeRoleWithWebIdentity` from GitHub Actions without restricting the `sub` claim to a specific repository."}
+{"id": "CLD_37", "domain": "E08", "prompt": "Analyze an Azure Entra ID attack path where a user with `Application Administrator` role adds credentials to a high-privilege Service Principal."}
+{"id": "CLD_38", "domain": "E03", "prompt": "Write a Terraform module for an AWS S3 bucket with Object Lock enabled, KMS customer-managed key encryption, and a bucket policy enforcing HTTPS."}
+{"id": "CLD_39", "domain": "E08", "prompt": "Explain how an attacker abuses AWS IAM `iam:PassRole` combined with `ec2:RunInstances` or `lambda:CreateFunction` to achieve full administrator escalation."}
+{"id": "CLD_40", "domain": "E08", "prompt": "Write an AWS SCP (Service Control Policy) that prevents member accounts in an AWS Organization from disabling CloudTrail or GuardDuty."}
+{"id": "CLD_41", "domain": "E08", "prompt": "Analyze a GCP IAM policy granting `roles/iam.serviceAccountUser` and `roles/compute.instanceAdmin.v1` on a project and explain the escalation route."}
+{"id": "CLD_42", "domain": "E03", "prompt": "Write a Terraform script for a Google Cloud VPC service perimeter (VPC Service Controls) preventing data exfiltration from BigQuery."}
+{"id": "CLD_43", "domain": "E08", "prompt": "Explain how AWS IMDSv2 (Instance Metadata Service Version 2) token-based sessions mitigate SSRF vulnerabilities compared to IMDSv1."}
+{"id": "CLD_44", "domain": "E08", "prompt": "Write an AWS IAM policy that allows developers to manage EC2 instances only if tagged with `Environment = Development` using condition keys."}
+{"id": "CLD_45", "domain": "E08", "prompt": "Analyze an Azure role assignment granting `Owner` over a Subscription to a managed identity attached to a public VM."}
+{"id": "CLD_46", "domain": "E03", "prompt": "Write a CloudFormation YAML template creating an encrypted RDS PostgreSQL instance in private subnets with automated snapshots and deletion protection."}
+{"id": "CLD_47", "domain": "E08", "prompt": "Explain the mechanics of Golden SAML attacks: stealing ADFS token-signing private keys to forge arbitrary SAML assertions."}
+{"id": "CLD_48", "domain": "E08", "prompt": "Write a Python script using `boto3` to audit all AWS IAM users with active access keys older than 90 days."}
+{"id": "CLD_49", "domain": "E08", "prompt": "Analyze an attack path in AWS where `iam:CreateAccessKey` permissions on another user are abused to steal their permissions."}
+{"id": "CLD_50", "domain": "E03", "prompt": "Write an Azure Policy JSON definition that restricts VM deployments to only approved secure base image publishers."}
+{"id": "CLD_51", "domain": "E08", "prompt": "Explain how cross-account IAM role assumption works using External IDs to prevent the Confused Deputy problem."}
+{"id": "CLD_52", "domain": "E08", "prompt": "Write an AWS SCP that blocks all API actions originating from outside a designated set of corporate egress CIDR blocks."}
+{"id": "CLD_53", "domain": "E08", "prompt": "Analyze an Entra ID (Azure AD) Conditional Access policy that omits compliant device checks, allowing token replay from unmanaged devices."}
+{"id": "CLD_54", "domain": "E03", "prompt": "Write a Terraform script provisioning an AWS WAFv2 Web ACL with rate-limiting rules and managed AWS Core Rule Sets."}
+{"id": "CLD_55", "domain": "E08", "prompt": "Explain how OAuth 2.0 PKCE (Proof Key for Code Exchange) protects single-page applications against authorization code interception."}
+{"id": "CLD_56", "domain": "E08", "prompt": "Write a Python script to detect dormant IAM roles in AWS by comparing creation date against `LastUsedDate` via IAM API."}
+{"id": "CLD_57", "domain": "E08", "prompt": "Analyze an AWS KMS key policy granting `kms:Decrypt` to `Principal: *` and assess the data exposure risk."}
+{"id": "CLD_58", "domain": "E03", "prompt": "Write a Terraform block to enable AWS GuardDuty, AWS Security Hub, and Amazon Macie across an organization."}
+{"id": "CLD_59", "domain": "E08", "prompt": "Explain how Pass-the-PRT (Primary Refresh Token) attacks work on Azure AD joined Windows endpoints."}
+{"id": "CLD_60", "domain": "E08", "prompt": "Write an AWS IAM permission boundary policy that prevents delegated admins from creating roles with administrator privileges."}
+{"id": "CLD_61", "domain": "E08", "prompt": "Analyze an attack path in GCP abusing `deploymentmanager.deployments.create` to provision compute instances running under elevated service accounts."}
+{"id": "CLD_62", "domain": "E03", "prompt": "Write an AWS Lambda function in Python that automatically quarantines an EC2 instance by attaching an isolated security group when a GuardDuty alert fires."}
+{"id": "CLD_63", "domain": "E08", "prompt": "Explain how FIDO2 WebAuthn provides phishing resistance compared to traditional TOTP / push notification MFA."}
+{"id": "CLD_64", "domain": "E03", "prompt": "Write a Terraform configuration for an Azure Key Vault with private endpoints, firewall rules, and purge protection enabled."}
+{"id": "CLD_65", "domain": "E08", "prompt": "Analyze an IAM policy using `NotAction` with `Allow` effect and explain why this inadvertently grants excessive administrative actions."}
+{"id": "CLD_66", "domain": "E08", "prompt": "Explain how Workload Identity Federation in GCP allows Kubernetes pods on AWS/Azure to access GCP APIs without static service account keys."}
+{"id": "CLD_67", "domain": "E03", "prompt": "Write a CloudFormation template setting up AWS Config with managed rules for S3 public read check and root account MFA check."}
+{"id": "CLD_68", "domain": "E08", "prompt": "Analyze an Entra ID administrative unit configuration to verify that scoped administrators cannot modify global tenant-level objects."}
+{"id": "CLD_69", "domain": "E08", "prompt": "Write a Python script using `boto3` to find all S3 buckets in an account that lack server-side default encryption."}
+{"id": "CLD_70", "domain": "E08", "prompt": "Explain the security implications of AWS VPC Peering vs AWS Transit Gateway in terms of traffic isolation and transitive routing."}
+{"id": "CLD_71", "domain": "E10", "prompt": "Audit a GitHub Actions workflow YAML file for script injection vulnerabilities in `run:` steps using untrusted `github.event.pull_request.title`."}
+{"id": "CLD_72", "domain": "E10", "prompt": "Explain how Dependency Confusion attacks work in private package registries (npm, PyPI, Maven) and how to configure namespace scoping to prevent them."}
+{"id": "CLD_73", "domain": "E10", "prompt": "Write a GitHub Actions workflow that generates a signed SLSA Level 3 Software Bill of Materials (SBOM) using `syft` and `cosign`."}
+{"id": "CLD_74", "domain": "E10", "prompt": "Explain the SolarWinds supply chain attack mechanism: injecting malicious source code during the build-compilation phase (Sunburst)."}
+{"id": "CLD_75", "domain": "E10", "prompt": "Write a pre-commit hook configuration in YAML using `gitleaks` and `checkov` to prevent hardcoded secrets and IaC flaws from being committed."}
+{"id": "CLD_76", "domain": "E10", "prompt": "Analyze a GitLab CI pipeline running with privileged Docker-in-Docker (`dind`) runners and outline the host security risks."}
+{"id": "CLD_77", "domain": "E10", "prompt": "Explain how Typosquatting attacks target package registries and write a Python script to detect lookalike package names."}
+{"id": "CLD_78", "domain": "E10", "prompt": "Write a GitHub Actions security hardening policy that pins third-party actions to full immutable commit SHAs instead of mutable tags."}
+{"id": "CLD_79", "domain": "E10", "prompt": "Analyze a malicious npm post-install script (`package.json`) that exfiltrates environment variables (`process.env`) to a remote webhook."}
+{"id": "CLD_80", "domain": "E10", "prompt": "Explain how in-toto verifies supply chain integrity across software build, test, and release stages using cryptographic layout metadata."}
+{"id": "CLD_81", "domain": "E10", "prompt": "Write a Conftest (OPA) test in Rego that checks Dockerfiles to ensure the `FROM` base image is pinned to an immutable SHA256 digest."}
+{"id": "CLD_82", "domain": "E10", "prompt": "Analyze a CircleCI pipeline configuration where unencrypted environment variables leak into build artifacts."}
+{"id": "CLD_83", "domain": "E10", "prompt": "Explain how Sigstore (Cosign, Rekor, Fulcio) enables keyless container image signing using OpenID Connect identities."}
+{"id": "CLD_84", "domain": "E10", "prompt": "Write a Python script to parse a CycloneDX JSON SBOM and query the OSV (Open Source Vulnerabilities) API for known CVEs."}
+{"id": "CLD_85", "domain": "E10", "prompt": "Analyze a Pull Request trigger configuration in GitHub Actions (`pull_request_target`) that unsafely checks out untrusted fork code with write access."}
+{"id": "CLD_86", "domain": "E10", "prompt": "Explain how to protect against subresource integrity (SRI) bypasses when serving JavaScript bundles from third-party CDNs."}
+{"id": "CLD_87", "domain": "E10", "prompt": "Write a Semgrep rule in YAML to detect Python code calling `eval()` or `exec()` with input originating from HTTP request parameters."}
+{"id": "CLD_88", "domain": "E10", "prompt": "Explain the attack mechanics behind the Codecov bash uploader breach (modifying CI script on upstream storage to steal environment variables)."}
+{"id": "CLD_89", "domain": "E10", "prompt": "Write a bash script for a Jenkins pipeline that runs static code analysis (SonarQube) and fails the build if the Quality Gate is missed."}
+{"id": "CLD_90", "domain": "E10", "prompt": "Analyze an insecure maven `pom.xml` configured with HTTP repository URLs instead of HTTPS, enabling Man-in-the-Middle dependency tampering."}
+{"id": "CLD_91", "domain": "E10", "prompt": "Explain how OpenSSF Scorecard automates the evaluation of open-source repository security practices."}
+{"id": "CLD_92", "domain": "E10", "prompt": "Write a GitHub Actions workflow integrating Trivy to scan container images for critical vulnerabilities before pushing to Amazon ECR."}
+{"id": "CLD_93", "domain": "E10", "prompt": "Analyze an attack where an adversary submits a malicious pull request adding a backdoored dependency into an open-source library."}
+{"id": "CLD_94", "domain": "E10", "prompt": "Explain how Branch Protection rules and required signed commits in GitHub protect release branches from tampering."}
+{"id": "CLD_95", "domain": "E10", "prompt": "Write a Python script to scan git commit histories using `pygit2` to identify accidentally committed private keys or certificates."}
+{"id": "CLD_96", "domain": "E10", "prompt": "Explain how reproducible builds (Reproducible Builds project) verify that compiled binaries match the source code byte-for-byte."}
+{"id": "CLD_97", "domain": "E10", "prompt": "Analyze a vulnerable Terraform pipeline where state files containing unencrypted database passwords are stored in public storage."}
+{"id": "CLD_98", "domain": "E10", "prompt": "Write a GitHub Actions workflow that executes Semgrep SAST scans and uploads results in SARIF format to GitHub Security tab."}
+{"id": "CLD_99", "domain": "E10", "prompt": "Explain how compromised PyPI developer accounts are abused to release malicious package versions and how Trusted Publishers mitigate this."}
+{"id": "CLD_100", "domain": "E10", "prompt": "Write an OPA Rego policy to validate that Kubernetes Helm releases define required labels (`app.kubernetes.io/version`, `owner`)."}

@@ -1,0 +1,100 @@
+{"id": "C_01", "domain": "E01", "prompt": "Implement a lock-free Single-Producer Single-Consumer (SPSC) ring buffer in C using C11 atomics (`stdatomic.h`) with explicit memory ordering (`memory_order_acquire` / `memory_order_release`)."}
+{"id": "C_02", "domain": "E01", "prompt": "Write an aligned memory allocation and free utility in C99 (`void* aligned_malloc(size_t bytes, size_t alignment)` and `void aligned_free(void *ptr)`) without using `posix_memalign`."}
+{"id": "C_03", "domain": "E01", "prompt": "Implement an intrusive doubly-linked list in C similar to the Linux kernel's `struct list_head`, including the `container_of` macro using `offsetof`."}
+{"id": "C_04", "domain": "E01", "prompt": "Write a complete C implementation of a thread pool using POSIX threads (`pthread_create`, `pthread_mutex_t`, `pthread_cond_t`) with a work queue."}
+{"id": "C_05", "domain": "E01", "prompt": "Write a C function to parse an IEEE 754 single-precision 32-bit floating point number into its sign, exponent, and mantissa components using bitwise operations without type punning UB."}
+{"id": "C_06", "domain": "E01", "prompt": "Implement a memory arena (bump allocator) in C with support for resetting the arena and creating sub-arenas."}
+{"id": "C_07", "domain": "E01", "prompt": "Demonstrate how to write an `epoll`-based event loop in C that multiplexes non-blocking TCP socket reads with a timer created via `timerfd_create`."}
+{"id": "C_08", "domain": "E01", "prompt": "Write a C program using `setjmp` and `longjmp` to implement cooperative coroutines with separate dynamically allocated stacks."}
+{"id": "C_09", "domain": "E01", "prompt": "Write a custom hash table in C using open addressing with Robin Hood hashing and backward-shift deletion."}
+{"id": "C_10", "domain": "E01", "prompt": "Implement a high-performance vector dot-product in C using AVX2 SIMD intrinsics (`immintrin.h`) with manual loop unrolling and remainder handling."}
+{"id": "C_11", "domain": "E01", "prompt": "Explain strict aliasing rules in C99/C11 and write an example showing how `char*` exception works vs undefined behavior with `float*` pointing to `int*`."}
+{"id": "C_12", "domain": "E01", "prompt": "Write a C program that inspects its own memory mappings by parsing `/proc/self/maps` and measuring the dirty page count using `mincore()`."}
+{"id": "C_13", "domain": "E01", "prompt": "Implement a generic dynamic array (vector) in C using preprocessor macros that achieves type safety without `void*` overhead."}
+{"id": "C_14", "domain": "E01", "prompt": "Write a C function that demonstrates atomic Compare-And-Swap (CAS) in a loop to update a shared counter without mutexes."}
+{"id": "C_15", "domain": "E01", "prompt": "Implement a custom memory pool / slab allocator in C that manages fixed-size 64-byte chunks with an embedded free-list."}
+{"id": "C_16", "domain": "E01", "prompt": "Write a C function that reverses the bits of a 64-bit unsigned integer using parallel bit manipulation techniques in $O(1)$ without loops."}
+{"id": "C_17", "domain": "E01", "prompt": "Demonstrate the implementation of a reader-writer lock in C using POSIX mutex and condition variables with writer-preference to avoid starvation."}
+{"id": "C_18", "domain": "E01", "prompt": "Write a C program that handles `SIGSEGV` using `sigaction` with `SA_SIGINFO`, inspecting `siginfo_t.si_addr` and recovering via `siglongjmp`."}
+{"id": "C_19", "domain": "E01", "prompt": "Implement an LZ77 or run-length encoding (RLE) byte-stream compressor and decompressor in C."}
+{"id": "C_20", "domain": "E01", "prompt": "Write a C program using Linux `splice()` and `vmsplice()` system calls to achieve zero-copy data transfer between two file descriptors."}
+{"id": "C_21", "domain": "E01", "prompt": "Implement a concurrent trie (prefix tree) in C for fast routing table lookups with Read-Copy-Update (RCU) synchronization principles."}
+{"id": "C_22", "domain": "E01", "prompt": "Write a C function that detects endianness at compile-time vs runtime and demonstrates byte swapping using GCC builtins (`__builtin_bswap32`, `__builtin_bswap64`)."}
+{"id": "C_23", "domain": "E01", "prompt": "Implement an asynchronous DNS resolver query packet generator in C that constructs RFC 1035 wire-format query frames."}
+{"id": "C_24", "domain": "E01", "prompt": "Write a C program that uses `mmap` with `MAP_SHARED` and `MAP_ANONYMOUS` to establish shared memory IPC between a parent and forked child process with semaphore synchronization."}
+{"id": "C_25", "domain": "E01", "prompt": "Explain sequence points and undefined evaluation order in C expressions like `a[i] = i++` and demonstrate compiler AST difference."}
+{"id": "RS_01", "domain": "E01", "prompt": "Implement a lock-free atomic stack (Treiber Stack) in Rust using `std::sync::atomic::{AtomicPtr, Ordering}` handling ABA considerations."}
+{"id": "RS_02", "domain": "E01", "prompt": "Write a custom smart pointer `MyRc<T>` in Rust implementing `Deref` and `Drop` to manage reference counting with `std::ptr::NonNull`."}
+{"id": "RS_03", "domain": "E01", "prompt": "Demonstrate how to write an unsafe Rust function that wraps an unaligned raw byte buffer into a slice of typed structs `&[T]` safely respecting alignment and `std::mem::size_of`."}
+{"id": "RS_04", "domain": "E01", "prompt": "Implement a custom asynchronous Executor in Rust that polls a `Future` using `std::task::{Context, Poll, Waker, RawWaker, RawWakerVTable}`."}
+{"id": "RS_05", "domain": "E01", "prompt": "Write a Rust macro (`macro_rules!`) that generates a type-safe enum-based State Machine with compile-time state transition enforcement."}
+{"id": "RS_06", "domain": "E01", "prompt": "Explain higher-ranked trait bounds (HRTB) `for<'a>` in Rust and write a function accepting a closure that works across arbitrary lifetime references."}
+{"id": "RS_07", "domain": "E01", "prompt": "Implement a generic binary search tree in Rust with non-null pointer nodes, demonstrating recursive traversal and safe node removal."}
+{"id": "RS_08", "domain": "E01", "prompt": "Write an intrusive linked list in Rust using `Pin<P>` to guarantee self-referential pointer stability across moves."}
+{"id": "RS_09", "domain": "E01", "prompt": "Implement a thread-safe Multiple-Producer Single-Consumer (MPSC) channel from scratch in Rust using `Mutex`, `Condvar`, and `VecDeque`."}
+{"id": "RS_10", "domain": "E01", "prompt": "Demonstrate the use of `std::sync::atomic::fence` and explain how `Acquire`/`Release` fences synchronize non-atomic data across threads in Rust."}
+{"id": "RS_11", "domain": "E01", "prompt": "Write a zero-copy network packet parser in Rust using traits and lifetimes that borrows directly from the underlying byte slice `&'a [u8]`."}
+{"id": "RS_12", "domain": "E01", "prompt": "Implement a custom memory allocator in Rust by implementing the `std::alloc::GlobalAlloc` trait backed by `libc::malloc` and `libc::free`."}
+{"id": "RS_13", "domain": "E01", "prompt": "Explain phantom data `std::marker::PhantomData<T>` in Rust and write a struct that owns raw pointers while declaring proper drop-check ownership and variance."}
+{"id": "RS_14", "domain": "E01", "prompt": "Write a Rust program demonstrating FFI (Foreign Function Interface) that safely passes C callback functions and user data pointers across language boundaries."}
+{"id": "RS_15", "domain": "E01", "prompt": "Implement a custom Iterator in Rust that yields a sliding window of references over a slice without allocating intermediate collections."}
+{"id": "RS_16", "domain": "E01", "prompt": "Explain variance in Rust (covariance, contravariance, invariance) and provide code examples showing why `&mut T` is invariant over `T`."}
+{"id": "RS_17", "domain": "E01", "prompt": "Write a concurrent LRU cache in Rust using `parking_lot::RwLock`, a hash map, and a doubly-linked list of node pointers."}
+{"id": "RS_18", "domain": "E01", "prompt": "Implement a procedural derive macro in Rust (using `syn` and `quote`) that automatically calculates the byte footprint of a struct."}
+{"id": "RS_19", "domain": "E01", "prompt": "Write a Rust function that uses SIMD intrinsics via `std::arch::x86_64` to compute the sum of an array of 32-bit floats."}
+{"id": "RS_20", "domain": "E01", "prompt": "Explain how `std::mem::transmute` can create undefined behavior with uninitialized memory and demonstrate the correct usage of `std::mem::MaybeUninit`."}
+{"id": "RS_21", "domain": "E01", "prompt": "Implement a custom error type in Rust implementing `std::error::Error`, `Display`, and `From` conversions across multiple nested error types."}
+{"id": "RS_22", "domain": "E01", "prompt": "Write a thread-pool implementation in Rust that distributes tasks over crossbeam channels with graceful shutdown handling."}
+{"id": "RS_23", "domain": "E01", "prompt": "Explain the difference between `Send` and `Sync` auto-traits in Rust and write a struct that is `Send` but not `Sync`."}
+{"id": "RS_24", "domain": "E01", "prompt": "Implement an async actor pattern in Rust using Tokio channels (`mpsc::Sender`, `mpsc::Receiver`) and `tokio::select!`."}
+{"id": "RS_25", "domain": "E01", "prompt": "Write an unsafe Rust slice-splitting function `split_at_mut` from scratch that satisfies the aliasing rule for disjoint slices."}
+{"id": "GO_01", "domain": "E01", "prompt": "Implement a generic worker pool in Go using channels, goroutines, and `sync.WaitGroup` with a dynamic cancellation context (`context.Context`)."}
+{"id": "GO_02", "domain": "E01", "prompt": "Explain how Go slice headers (`reflect.SliceHeader`) work internally and write code demonstrating memory leaks caused by slicing sub-slices of large arrays."}
+{"id": "GO_03", "domain": "E01", "prompt": "Implement a lock-free ring buffer in Go using `sync/atomic` operations (`CompareAndSwapUint64`, `LoadUint64`)."}
+{"id": "GO_04", "domain": "E01", "prompt": "Write a rate limiter in Go using the Token Bucket algorithm with goroutines and `time.Ticker`."}
+{"id": "GO_05", "domain": "E01", "prompt": "Explain Go interface internals (`eface` vs `iface`) and write a program that inspects interface type descriptors using `unsafe.Pointer`."}
+{"id": "GO_06", "domain": "E01", "prompt": "Implement a concurrent cache in Go with singleflight request coalescing to prevent cache stampedes."}
+{"id": "GO_07", "domain": "E01", "prompt": "Demonstrate how Go's Garbage Collector handles write barriers during concurrent mark phase and explain escape analysis with `go build -gcflags='-m'`."}
+{"id": "GO_08", "domain": "E01", "prompt": "Write a Go network server using low-level `syscall.Socket`, `syscall.Bind`, and `syscall.Listen` handling non-blocking connections."}
+{"id": "GO_09", "domain": "E01", "prompt": "Implement a generic binary min-heap in Go 1.18+ supporting any ordered type `cmp.Ordered`."}
+{"id": "GO_10", "domain": "E01", "prompt": "Explain Go memory model happens-before relationships regarding channel communication and demonstrate a data race without synchronization."}
+{"id": "GO_11", "domain": "E01", "prompt": "Write a custom `io.Reader` implementation in Go that transparently decrypts an AES-CTR encrypted stream on-the-fly."}
+{"id": "GO_12", "domain": "E01", "prompt": "Implement a circuit breaker pattern in Go with state transitions (Closed, Open, Half-Open) using `sync.Mutex` and atomic time checks."}
+{"id": "GO_13", "domain": "E01", "prompt": "Write a Go program using `sync.Pool` to reuse byte buffers and analyze memory allocations via `runtime.ReadMemStats`."}
+{"id": "GO_14", "domain": "E01", "prompt": "Implement a priority queue in Go with concurrent task scheduling using `container/heap`."}
+{"id": "GO_15", "domain": "E01", "prompt": "Explain Go Goroutine scheduling internals (M:N scheduler, GMP model: Goroutine, Machine, Processor) and work-stealing algorithm."}
+{"id": "GO_16", "domain": "E01", "prompt": "Write a Go function that converts a `[]byte` slice to a `string` without memory allocation using `unsafe.String` and `unsafe.SliceData` in Go 1.20+."}
+{"id": "GO_17", "domain": "E01", "prompt": "Implement a concurrent fan-out / fan-in pipeline in Go that streams data through multiple transformation stages using bounded channels."}
+{"id": "GO_18", "domain": "E01", "prompt": "Write a Go program that intercepts system signals (`os.Interrupt`, `syscall.SIGTERM`) and executes a clean 10-second graceful shutdown of HTTP servers and database pools."}
+{"id": "GO_19", "domain": "E01", "prompt": "Demonstrate the use of `reflect` package in Go to dynamically instantiate structs and map key-value map fields to struct fields."}
+{"id": "GO_20", "domain": "E01", "prompt": "Implement an in-memory Pub/Sub event bus in Go supporting topic subscriptions with regex matching."}
+{"id": "GO_21", "domain": "E01", "prompt": "Write a Go program that utilizes `golang.org/x/sync/errgroup` to execute concurrent tasks and cancel remaining work on the first returned error."}
+{"id": "GO_22", "domain": "E01", "prompt": "Explain how Go map buckets, hash collisions, and incremental evacuation during map growth work under the hood."}
+{"id": "GO_23", "domain": "E01", "prompt": "Write a custom `net.Listener` in Go that enforces a maximum simultaneous active connection limit across all accepted TCP sockets."}
+{"id": "GO_24", "domain": "E01", "prompt": "Demonstrate how to write a Go assembly function (`.s` file) that executes a 64-bit integer addition using x86-64 assembly instructions."}
+{"id": "GO_25", "domain": "E01", "prompt": "Write a Go benchmark test using `testing.B` with `b.RunParallel` and `b.ReportAllocs()` to profile lock contention."}
+{"id": "PY_01", "domain": "E01", "prompt": "Implement a custom asynchronous event loop from scratch in Python using `selectors.DefaultSelector` and generators (`yield`)."}
+{"id": "PY_02", "domain": "E01", "prompt": "Explain Python descriptor protocol (`__get__`, `__set__`, `__delete__`) and write a validated type-checked field descriptor for class attributes."}
+{"id": "PY_03", "domain": "E01", "prompt": "Write a metaclass in Python (`type.__new__`) that enforces all subclass methods to have docstrings and validates method type annotations at class definition time."}
+{"id": "PY_04", "domain": "E01", "prompt": "Explain Python CPython GIL (Global Interpreter Lock) internals, bytecode evaluation loop (`ceval.c`), and how Free-Threaded Python (PEP 703) handles reference counting."}
+{"id": "PY_05", "domain": "E01", "prompt": "Write a high-performance Python C-extension using Python C API (`Python.h`) that computes the Mandelbrot set into a numpy array."}
+{"id": "PY_06", "domain": "E01", "prompt": "Implement an asynchronous connection pool for TCP sockets in Python using `asyncio.Protocol` and `asyncio.Queue`."}
+{"id": "PY_07", "domain": "E01", "prompt": "Explain CPython memory management hierarchy: Small Object Allocator (PyObject_Malloc), Arenas, Pools, and Small Object size thresholds (<= 512 bytes)."}
+{"id": "PY_08", "domain": "E01", "prompt": "Write a Python decorator that implements memoization with TTL (Time-To-Live) cache expiration and LRU eviction using a doubly-linked list and dictionary."}
+{"id": "PY_09", "domain": "E01", "prompt": "Demonstrate the use of `ctypes` and `cffi` in Python to load a shared C library (`.so`), pass complex structs by reference, and handle callbacks from C into Python."}
+{"id": "PY_10", "domain": "E01", "prompt": "Explain Python garbage collection generational cycle detector (`gc` module) for resolving circular references in objects with custom `__del__` methods."}
+{"id": "PY_11", "domain": "E01", "prompt": "Implement a Trie data structure in Python that supports wildcard search (`.` matches any single character) and prefix auto-completion."}
+{"id": "PY_12", "domain": "E01", "prompt": "Write an asynchronous context manager and generator in Python (`__aenter__`, `__aexit__`, `__anext__`) for streaming chunked HTTP responses."}
+{"id": "PY_13", "domain": "E01", "prompt": "Explain Python bytecode disassembly using `dis` module and demonstrate peephole optimization / constant folding differences across Python versions."}
+{"id": "PY_14", "domain": "E01", "prompt": "Implement a thread-safe singleton pattern in Python using a custom metaclass with double-checked locking."}
+{"id": "PY_15", "domain": "E01", "prompt": "Write a Python script that uses `multiprocessing.shared_memory` to share large numpy arrays between separate processes without serialization overhead."}
+{"id": "PY_16", "domain": "E01", "prompt": "Implement a distributed task scheduler simulator in Python using `heapq` and `asyncio.Condition` to trigger tasks at exact unix timestamps."}
+{"id": "PY_17", "domain": "E01", "prompt": "Explain how Python `super()` works internally using the C3 Linearization / Method Resolution Order (MRO) algorithm and calculate MRO for diamond inheritance."}
+{"id": "PY_18", "domain": "E01", "prompt": "Write a custom Python AST transformer using `ast.NodeTransformer` that automatically wraps all function calls in an execution timer."}
+{"id": "PY_19", "domain": "E01", "prompt": "Implement a structural pattern matching parser in Python 3.10+ (`match/case`) that evaluates an Abstract Syntax Tree for a simple mathematical expression language."}
+{"id": "PY_20", "domain": "E01", "prompt": "Demonstrate how to prevent memory bloat in Python objects using `__slots__` and measure the exact byte savings using `sys.getsizeof` and `tracemalloc`."}
+{"id": "PY_21", "domain": "E01", "prompt": "Write an asynchronous rate-limited batch downloader in Python using `asyncio.Semaphore` and `aiohttp` with exponential backoff on HTTP 429."}
+{"id": "PY_22", "domain": "E01", "prompt": "Explain how Python frame objects and traceback objects work, and write a custom exception hook (`sys.excepthook`) that prints local variable states on unhandled errors."}
+{"id": "PY_23", "domain": "E01", "prompt": "Implement a custom dictionary subclass in Python implementing a consistent hashing ring for distributed node caching."}
+{"id": "PY_24", "domain": "E01", "prompt": "Write a Python script that analyzes memory leaks in long-running processes using `objgraph` and `gc.get_referrers`."}
+{"id": "PY_25", "domain": "E01", "prompt": "Explain generator delegation (`yield from`) mechanics in Python and write a coroutine pipeline that handles bidirectional value passing and exception injection (`throw()`)."}
